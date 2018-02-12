@@ -32,4 +32,7 @@ class Network(nn.Module):
         self.fc1 = nn.Linear(input_size, 30) #Full connection between input layer to all the input of hidden layer. 
         self.fc2 = nn.Linear(30, nb_actions)
     
-    
+    def forward(self, state) :
+        x = F.relu(self.fc1(state)) # the first full connection of the input neurons
+        q_values = self.fc2(x) #get the output Q values of the Neural network
+        return q_values # return the Q values. 

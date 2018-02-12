@@ -53,4 +53,7 @@ How to follow the code in this tutorial.
 
 		Neural network has multiple layers between them input layer, hidden layer , output layer. These layers are supposed to connected to each other. This is achieved by using the self.fc1 = nn.Linear(input_size, 30) & self.fc1 = nn.Linear(30, nb_actions). In the __init__() function we need to initialize the neural network. and define it so that we know what is the size of the neural network.
 
-		
+		forward Propagation.  - It will activate the neurons but also and mostly will requtnr the Q value depending the Q Values. 
+		nn.functional module contains all the functions . We'll use the Relu function. Its a rectifier function. Using wither Softmax. 
+
+		Change the architecture using the   
