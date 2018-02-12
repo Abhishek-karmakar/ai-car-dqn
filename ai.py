@@ -14,8 +14,22 @@ import numpy as np
 import random
 import os #to load the model and 
 import torch # implement Neural netork using pytorch
-import torch.nn #contain all the tools to implement the neural network. Three signals of the three sensors. 
+import torch.nn as nn #contain all the tools to implement the neural network. Three signals of the three sensors. 
 import torch.nn.functional as F# different functions while using a neural network
 import torch.optim as optim # Optimizers to optimize gradinet decent.
 import torch.autograd as autograd #put a tensor into a variable containting a tenr and also a gradient.
 from torch.autograd import Variable
+
+#creating the architecture of the Neural Network
+
+class Network(nn.Module):
+   
+    def __init__(self, input_size, nb_action):
+        super(Network, self).__init__()#to be able to use the functions of the modules
+        #variable that is attached to the object 
+        self.input_size = input_size
+        self.nb_action = nb_action
+        self.fc1 = nn.Linear(input_size, 30) #Full connection between input layer to all the input of hidden layer. 
+        self.fc2 = nn.Linear(30, nb_actions)
+    
+    

@@ -45,4 +45,12 @@ How to follow the code in this tutorial.
 	Simple check all the commits from the first one. The following steps have been mentioned to make it easy to follow
 
 	1.> Import all the libraries.
-	 
+	2.> Craete the architecture of the Neural Network. Make a class 
+		- Define init() which will initialize the Neural Network , defines the variable of the object. Defineing the Input Layer - 5 neurons, The hidden layer and the output layer. 
+		- Foward Function :  A rectifier activation because its purely non leniar function. 
+
+		- How many neurons do we need in the hidden layer set to 30 after some experiments.
+
+		Neural network has multiple layers between them input layer, hidden layer , output layer. These layers are supposed to connected to each other. This is achieved by using the self.fc1 = nn.Linear(input_size, 30) & self.fc1 = nn.Linear(30, nb_actions). In the __init__() function we need to initialize the neural network. and define it so that we know what is the size of the neural network.
+
+		
