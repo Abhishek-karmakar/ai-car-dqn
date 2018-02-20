@@ -1,4 +1,3 @@
-[https://circleci.com/gh/:owner/:repo.png?circle-token=:circle-token]
 
 Self Driving Car -(Deep Q Learning)
 
@@ -86,4 +85,57 @@ How to follow the code in this tutorial.
 				Eventually we get a list of batches which is well alligned and each batch is a PyTorch variable. 
 
 				This function is used to sample the memory. To train a model better.
+
+4.> Implement Whole Deep Q Learning Model. 
+		
+		- Making a class with Various Functions. 
+			init()
+			Select_actions() - #select correct action
+			Learn()
+			update()
+			Score function
+			Save
+			Load
+
+		- __init__() will take input_size and nb_action and the Gamma parameter which is the delay coeffecient .
+			initialize the Gamma
+			initialize the reward_window - It will be a sliding window of the mean of the last 100 reward which we will use to evaluate the evolution of the AI performance. Will be an empty list. 
+			initialize the Neural Network - Model, an onject of the network class. 
+			initialize the optimizer - Stocastic Optimizer.  (we can chose from many) , Creating the Object of the Adam Class. 
+			initialize the last_state - A vector of 5 dimension. 3 signals of the 3 sensors. Orientation and - Orientation. It needs to be a torch tensor. We need to also make a fake dimension. 
+			initialize last_action will be a simple number. initilize it to Zero. 
+			initialize last_reward will be a float number. 
+
+		select_action() will take two parameters self and input state.
+			we are going to generate the distribution of probablilities wrt the 3 Q values which are input state1,2,or 3. One Probability for each Q value and they will sum up to One . We'll do all this with SoftMax which will also return One. We can explore using a Temperature parameter. You can use a Softmax instead of a orgmax because this will let the car explore than follow a set-path. 
+
+		learn ()- We are going to train the Deep Neural Network inside your AI. Whole process of forward propagation and Backpropagation so we get our output. We'll get our target also. Then we will compare the Target to the error to get our error. Then we will backpropagate this error into the neural network and using stocatic Gradient Decent we will update the weights according to how much they contributed to the last error.    
+
+		 	def learn(self, batch_state, batch_next_state, batch_reward, batch_action): - marcov desision process is in the heart of DQN.
+
+		 	#max of the q values of the next state represented by index 0 according to all the actions which are represented by index 1
+
+		 	td_loss = temporal difference , chose the loss function Huber Loss. F.smooth_l1_loss
+
+		 	At each iteration of the loop we need to reinitialize the optimizer. to backpropagate our loss to the Neural Network. 
+
+		update() - This will update everything as soon as the AI reaches a new state. rewards, The connection that we are doing to use the . This function will take the last_reward and last_action to make the new action and this will be used in the update function of the map.py. THis is the connection between the Game (Environment) and the AI.
+
+			The AI needs to start learning from its last 100 events. We are learning from some random samples of the memory. 
+
+			reward window will take a mean of last 1000 
+
+		score() function - We will compute the score of the sliding_window. We will compute the mean of all the values of the reward_window
+
+		save() - function to save the model or save the brain of the car. We will save the model of the brain.
+
+			just want to save the model and weights. 
+
+		load() - function to load the  
+
+
+
+
+
+
 
