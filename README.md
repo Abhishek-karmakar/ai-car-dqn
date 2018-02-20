@@ -1,4 +1,4 @@
-[https://circleci.com/gh/:owner/:repo.png?circle-token=:circle-token]
+[![Build Status](http://circleci-badges-max.herokuapp.com/img/Abhishek-karmakar/ai-car-dqn?token=)](https://circleci.com/gh/Abhishek-karmakar/ai-car-dqn)
 
 Self Driving Car -(Deep Q Learning)
 
