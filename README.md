@@ -1,3 +1,4 @@
+[https://circleci.com/gh/:owner/:repo.png?circle-token=:circle-token]
 
 Self Driving Car -(Deep Q Learning)
 
@@ -45,7 +46,7 @@ How to follow the code in this tutorial.
 	Simple check all the commits from the first one. The following steps have been mentioned to make it easy to follow
 
 	1.> Import all the libraries.
-	2.> Craete the architecture of the Neural Network. Make a class 
+	2.> Create the architecture of the Neural Network. Make a class 
 		- Define init() which will initialize the Neural Network , defines the variable of the object. Defineing the Input Layer - 5 neurons, The hidden layer and the output layer. 
 		- Foward Function :  A rectifier activation because its purely non linear function. 
 
@@ -55,8 +56,7 @@ How to follow the code in this tutorial.
 
 		forward Propagation.  - It will activate the neurons but also and mostly will requtnr the Q value depending the Q Values. 
 		nn.functional module contains all the functions . We'll use the Relu function. Its a rectifier function. Using wither Softmax. 
-
-		Change the architecture using the   
+   
 
 	3.> Implementing Experience Replay
 
@@ -86,11 +86,4 @@ How to follow the code in this tutorial.
 				Eventually we get a list of batches which is well alligned and each batch is a PyTorch variable. 
 
 				This function is used to sample the memory. To train a model better.
-
-	
-
-		  
-
-				
-
 
