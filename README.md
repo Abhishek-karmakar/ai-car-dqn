@@ -112,13 +112,13 @@ How to follow the code in this tutorial.
 
 		learn ()- We are going to train the Deep Neural Network inside your AI. Whole process of forward propagation and Backpropagation so we get our output. We'll get our target also. Then we will compare the Target to the error to get our error. Then we will backpropagate this error into the neural network and using stocatic Gradient Decent we will update the weights according to how much they contributed to the last error.    
 
-		 	def learn(self, batch_state, batch_next_state, batch_reward, batch_action): - marcov desision process is in the heart of DQN.
+		        def learn(self, batch_state, batch_next_state, batch_reward, batch_action): - marcov desision process is in the heart of DQN.
 
-		 	#max of the q values of the next state represented by index 0 according to all the actions which are represented by index 1
+		        #max of the q values of the next state represented by index 0 according to all the actions which are represented by index 1
 
-		 	td_loss = temporal difference , chose the loss function Huber Loss. F.smooth_l1_loss
+		        td_loss = temporal difference , chose the loss function Huber Loss. F.smooth_l1_loss
 
-		 	At each iteration of the loop we need to reinitialize the optimizer. to backpropagate our loss to the Neural Network. 
+			At each iteration of the loop we need to reinitialize the optimizer. to backpropagate our loss to the Neural Network. 
 
 		update() - This will update everything as soon as the AI reaches a new state. rewards, The connection that we are doing to use the . This function will take the last_reward and last_action to make the new action and this will be used in the update function of the map.py. THis is the connection between the Game (Environment) and the AI.
 
