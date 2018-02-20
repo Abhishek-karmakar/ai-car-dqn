@@ -47,7 +47,7 @@ How to follow the code in this tutorial.
 	1.> Import all the libraries.
 	2.> Craete the architecture of the Neural Network. Make a class 
 		- Define init() which will initialize the Neural Network , defines the variable of the object. Defineing the Input Layer - 5 neurons, The hidden layer and the output layer. 
-		- Foward Function :  A rectifier activation because its purely non leniar function. 
+		- Foward Function :  A rectifier activation because its purely non linear function. 
 
 		- How many neurons do we need in the hidden layer set to 30 after some experiments.
 
@@ -57,3 +57,40 @@ How to follow the code in this tutorial.
 		nn.functional module contains all the functions . We'll use the Relu function. Its a rectifier function. Using wither Softmax. 
 
 		Change the architecture using the   
+
+	3.> Implementing Experience Replay
+
+		we'll make a Replay class which will contain a couple of methods which will do all the work related to Experience Replay. 
+		Its based on Markov Decision Process. One time step is not enough for the model to understand long term corellation.
+		We put last one 100 steps in the memory. The Whole Deep Q Lerning process much better. 
+		3 function - 
+			__init__ will initialize 100 transitions in the memory 
+			
+			push function , 
+				Append a new transition in the memory.  
+				So we do not cross more than 100 memory.
+			 - It has some parameters and those params will have some state. 
+
+			sample function to sample some transitions in the 100 samples. 
+				Return some sample Random functions.
+				We are taking some random samples from memory with fixed batch size. 
+				we want our samples in the following state.
+					state
+					actions
+					rewards
+
+				So that we can wrap these vaiables in a PyTorch Variable. A variable which contains both a Tensor and a Gradient. 
+				To be able to differentiate with respect to a Tensor, we need the strucutre of a tensor and a gradient.  
+				Variable function will convert a Torch function to a variable and a gradient. 
+
+				Eventually we get a list of batches which is well alligned and each batch is a PyTorch variable. 
+
+				This function is used to sample the memory. To train a model better.
+
+	
+
+		  
+
+				
+
+

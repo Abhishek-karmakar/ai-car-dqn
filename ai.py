@@ -45,6 +45,10 @@ class ReplayMemory(object):
         
     def push(self, event):
         self.memory.append(event) #it will append the last event in the memory.
-        if len(self.memory) > self.capacity:
+        if len(self.memory) > self.capacity: # if the number of elements i larger than the capacity dlete the first element.
             del self.memory[0] # delete the first 
-        
+    
+    def sample(self, batch_size):
+        # if list = ((1,2,3),(4,5,6)), then zip(*list) = ((1,4),(2,3),(5,6))
+        samples = zip(*random.sample(self.memory, batch_size))
+        return map(lambda x: Variable(torch.cat(x, 0)))
