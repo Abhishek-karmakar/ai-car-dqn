@@ -1,9 +1,10 @@
 
-Self Driving Car -(Deep Q Learning)
+[![Build Status](http://circleci-badges-max.herokuapp.com/img/Abhishek-karmakar/ai-car-dqn?token=)](https://circleci.com/gh/Abhishek-karmakar/ai-car-dqn)
 
-	Part 1 !
 
-	In this part we are going to get started into the world of AI and buid out own setf driving car. THis is going to be a a modelled version of a car(so it wont be driving in the real cities) but still, it will learn how to drive itself and the key work here is learn because the car will not be given any rles on how to operate in the environment before hand - it will have to live everything out on its own. And to achieve that, we will be using deep-Q-learning. 
+## Self Driving Car -(Deep Q Learning)
+
+	We are going to get started into the world of AI and build out own self driving car. This is going to be a a modelled version of a car(so it wont be driving in the real cities) but still, it will learn how to drive itself and the key work here is learn because the car will not be given any rles on how to operate in the environment before hand - it will have to live everything out on its own. And to achieve that, we will be using deep-Q-learning. 
 
 Deep q-Learning  :
 
